@@ -2,7 +2,7 @@ import React,{useState} from 'react'
 
 const User=()=> {
     const[show,setshow]=useState(false)
-    const[submitshow,setsubmitshow]=useState(true)
+    // const[submitshow,setsubmitshow]=useState(true)
     const[state,setstate]=useState({
         Name1:"",
         Department:"",
@@ -47,12 +47,12 @@ const User=()=> {
   }
 if(show){
     return(
-        <>
+        <div>
         <div id='result'>
-            {state.employee.map((value,index,Array)=>
+            {state.employee.map((value,index)=>
           {
             return(
-              <div id="output">
+              <div id="output" key={index}>
             <p key={index}>Name : {value.Name} | Department : {value.Department} | Rating : {value.Rating}</p> 
             </div>
             )
@@ -60,7 +60,7 @@ if(show){
         }
         </div>
         <button onClick={back}>go back</button>
-        </>
+        </div>
     )
 
       
